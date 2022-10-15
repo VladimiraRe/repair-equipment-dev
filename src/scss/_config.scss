@@ -1,0 +1,60 @@
+html {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+*, *::after, *::before {
+box-sizing: inherit;
+}
+
+body {
+font-family: "TT Lakes", sans-serif;
+margin: 0;
+background-color: $main;
+}
+h1, h2, ul, p, figure, fieldset {
+margin: 0;
+padding: 0;
+}
+ul {
+list-style: none;
+}
+a {
+text-decoration: none;
+cursor: pointer;
+
+&:active, &:visited, &:link {
+    color: inherit;
+}
+}
+button {
+cursor: pointer;
+background-color: transparent;
+border: none;
+padding: 0;
+}
+fieldset {
+border: none;
+}
+label {
+cursor: pointer;
+}
+
+.container {
+width: 100vw;
+max-width: $desktop-width;
+padding: 0 $mobile;
+position: relative;
+margin: 0 auto;
+}
+@media (min-width: $tablet-width) {
+.container {
+    padding: 0 $tablet;
+}
+}
+@media (min-width: $desktop-width) {
+.container {
+    padding: 0 $desktop 0 320px + $desktop;
+}
+}

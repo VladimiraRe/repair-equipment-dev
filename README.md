@@ -1,0 +1,1 @@
+https://vladimirare.github.io/equipment-repair-service/index.html

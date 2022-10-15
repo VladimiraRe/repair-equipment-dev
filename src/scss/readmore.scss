@@ -1,0 +1,28 @@
+.readmore {
+    display: inline-block;
+    position: relative;
+    padding-left: 32px;
+}
+.readmore::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 7.41px;
+    height: 10.29px;
+    background: url(../img/readmore/checkmarks.svg) no-repeat center;
+    padding: 8px;
+    transition: transform .5s;
+}
+.readmore--open::before {
+    transform: rotate(180deg);
+}
+.readmore__txt {
+    @include fontTTLakes(500, 16px, 24px, -0.2px, $main-font);
+    display: inline-block;
+    opacity: 1;
+    transition: opacity .4s;
+}
+.readmore__txt--invisible {
+    opacity: 0;
+}

@@ -1,0 +1,32 @@
+.title {
+    @include fontTTLakes(700, 28px, 40px, -0.6px, $main-font);
+    position: relative;
+    padding: 24px 0;
+}
+.title::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: -1 * $mobile;
+    height: 40px;
+    width: 4px;
+    border-radius: 0 5px 5px 0;
+    background-color: $secondary-accent;
+}
+@media (min-width: $tablet-width) {
+    .title {
+        padding-bottom: 32px;
+    }
+    .title::before {
+        left: -1 * $tablet;
+    }
+}
+@media (min-width: $desktop-width) {
+    .title {
+        padding: 42px 0 8px;
+    }
+    .title::before {
+        top: 42px;
+        left: -1 * $desktop;
+    }
+}

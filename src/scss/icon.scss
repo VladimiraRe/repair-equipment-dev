@@ -1,0 +1,37 @@
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0;
+}
+.icon__img {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background: $main-accent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon__img > svg {
+    fill: $secondary;
+}
+.icon__text {
+    @include fontTTLakes(500, 16px, 24px, -0.2px, $main-font);
+    white-space: nowrap;
+    display: none;
+}
+.icon:hover > .icon__img {
+    background-color: $main-accent-fade;
+    transition: background-color .3s;
+}
+.icon:hover > .icon__img > svg {
+    fill: $main-accent;
+    transition: fill .3s;
+}
+@media (min-width: $desktop-width) {
+    .icon__text {
+        display: inline;
+    }
+}

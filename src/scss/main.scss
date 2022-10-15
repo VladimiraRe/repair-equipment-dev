@@ -1,0 +1,20 @@
+.main {
+    padding-top: 24px;
+}
+@media (min-width: $tablet-width) {
+    .main {
+        padding-top: 32px;
+    }
+    .about-us {
+        flex-direction: row;
+        gap: 48px;
+    }
+}
+@media (min-width: $desktop-width) {
+    .main {
+        padding-top: 11px;
+    }
+    .about-us {
+        gap: 51px;
+    }
+}
