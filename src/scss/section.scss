@@ -109,11 +109,47 @@
         }
     }
 }
-.section__swiper {
+.section__swiper,
+.section__swiper--big {
     width: 100%;
 }
 .section__swiper-pagination {
     bottom: 0 !important;
+}
+.section__table {
+    display: block;
+}
+.section__tbl-head {
+    display: none;
+}
+.section__tbl-row {
+    display: grid;
+    grid-template-columns: 92px 130px;
+    column-gap: 6px;
+    background-color: $secondary;
+    border-radius: 6px;
+    height: 200px;
+}
+.section__tbl-data {
+    position: relative;
+    &:not(:nth-of-type(3)) {
+        grid-column: 1 / -1;
+    }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include fontTTLakes(500, 14px, 16px, 0.2px, $secondary-font);
+    }
+    &:first-of-type::before {
+        content: 'Ремонтные услуги';
+    }
+    &:nth-of-type(2)::before {
+        content: 'Цена';
+    }
+    &:nth-of-type(3)::before {
+        content: 'Срок';
+    }
 }
 @media (min-width: $tablet-width) {
     .section {
