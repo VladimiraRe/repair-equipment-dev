@@ -20,14 +20,8 @@ for (let i = 0; i < btns.length; i++) {
     buttonСlick(i);
 }
 
-function smoothChange(textClass) {
-    textClass.classList.add('readmore__txt--invisible');
-    setTimeout(() => { textClass.classList.remove('readmore__txt--invisible'); }, 400);
-}
-
 function textChange(text, element) {
-    smoothChange(readmoreTxt[element]);
-    setTimeout(() => { areaToOpen[element].classList.toggle('section__overlay'); }, 350);
+    areaToOpen[element].classList.toggle('section__overlay');
     btns[element].classList.toggle('readmore--open');
-    setTimeout(() => { readmoreTxt[element].textContent = text; }, 350);
+    readmoreTxt[element].textContent = text;
 }
