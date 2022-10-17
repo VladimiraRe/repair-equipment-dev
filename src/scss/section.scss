@@ -5,10 +5,32 @@
 
     &:first-child .section__overlay {
         max-height: 90px;
+        overflow: hidden;
     }
-}
-.section__overlay {
-    overflow: hidden;
+    &:nth-child(2), &:nth-child(3) {
+        .section__readmore {
+            display: none;
+        }
+    }
+    &:nth-child(2) {
+        .section__swiper {
+            height: 100px;
+        }
+    }
+    &:nth-child(3) {
+        .section__card {
+            height: 160px;
+        }
+        .section__swiper {
+            height: 188px;
+        }
+        .section__card-link {
+            align-items: flex-start;
+        }
+        .section__card-icon {
+            margin-top: auto;
+        }
+    }
 }
 .section__text-box {
     display: flex;
@@ -63,7 +85,7 @@
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
-    max-height: 100%;
+    height: 100%;
     box-sizing: border-box;
 }
 .section__card-icon {
@@ -89,27 +111,22 @@
 }
 .section__swiper {
     width: 100%;
-    height: 100px;
 }
 .section__swiper-pagination {
     bottom: 0 !important;
 }
-.section__readmore--hide {
-    display: none;
-}
-.section:nth-of-type(2) .section__readmore {
-    display: none;
-}
 @media (min-width: $tablet-width) {
     .section {
-        &:first-child .section__overlay {
-            max-height: 160px;
-        }
-        &:nth-child(2) {
+        gap: 24px;
+        &:nth-child(2), &:nth-child(3) {
             align-items: flex-start;
 
+            .section__swiper {
+                height: auto;
+            }
+
             .section__overlay {
-                max-height: 160px;
+                overflow: hidden;
             }
             .section__readmore {
                 display: inline-block;
@@ -141,6 +158,10 @@
         max-height: 350px;
         transition: max-height .3s;
     }
+    .section:first-child .section__overlay,
+    .section__overlay {
+        max-height: 160px;
+    }
     .section__card {
         width: 224px;
         flex-shrink: 0;
@@ -170,5 +191,8 @@
     }
     .section__card {
         width: 240px;
+    }
+    .section__overlay {
+        max-height: 160px;
     }
 }
