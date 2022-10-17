@@ -1,3 +1,4 @@
 import '../scss/style.scss';
 
-console.log('Works!');
+import './section__swiper';
+import './readmore';

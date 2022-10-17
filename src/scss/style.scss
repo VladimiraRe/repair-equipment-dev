@@ -5,6 +5,8 @@
 @import '../css/normalize.css';
 @import './config';
 
+@import '../css/swiper-bundle.min.css';
+
 @import './header.scss';
 @import './icon.scss';
 @import './logo.scss';
@@ -14,3 +16,4 @@
 @import './section.scss';
 @import './readmore.scss';
 @import './sidebar.scss';
+@import './lang.scss';

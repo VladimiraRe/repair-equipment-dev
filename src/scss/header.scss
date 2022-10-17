@@ -41,8 +41,10 @@
     align-items: center;
     gap: 16px;
 }
-.header__wrap:last-of-type > .header__list:first-of-type {
-    display: none;
+.header__wrap:last-of-type {
+    > .header__list:first-of-type {
+        display: none;
+    }
 }
 .header__item {
     font-size: 0;
@@ -82,8 +84,10 @@
         display: inline;
         left: 173px;
     }
-    .header__wrap:last-of-type > .header__list:first-of-type {
-        display: flex;
+    .header__wrap:last-of-type {
+        > .header__list:first-of-type {
+            display: flex;
+        }
     }
 }
 @media (min-width: $desktop-width) {
@@ -96,8 +100,10 @@
     .header__wrap:last-of-type::before {
         display: none;
     }
-    .header__wrap:last-of-type > .header__list:first-of-type {
-        display: none;
+    .header__wrap:last-of-type {
+        > .header__list:first-of-type {
+            display: none;
+        }
     }
     .header__list {
         position: absolute;
