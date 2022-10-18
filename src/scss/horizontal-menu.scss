@@ -37,6 +37,7 @@
     .horizontal-menu__list {
         margin-right: 0;
         flex-wrap: wrap;
+        padding-left: $desktop;
     }
     .horizontal-menu__item:last-of-type {
         margin-right: 0;

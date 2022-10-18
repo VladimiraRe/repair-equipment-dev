@@ -23,10 +23,11 @@
 }
 @media (min-width: $desktop-width) {
     .title {
-        padding: 42px 0 8px;
+        padding: 42px 0 8px $desktop;
+        display: inline-block;
     }
     .title::before {
         top: 42px;
-        left: -1 * $desktop;
+        left: 0;
     }
 }

@@ -85,6 +85,14 @@
 @media (min-width: $desktop-width) {
     .sidebar {
         gap: 37px;
+        position: sticky;
+        float: left;
+
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
     }
     .sidebar--position {
         display: flex;

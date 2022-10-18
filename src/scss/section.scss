@@ -7,7 +7,7 @@
         max-height: 90px;
         overflow: hidden;
     }
-    &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+    &:nth-child(2), &:nth-child(3) {
         .section__readmore {
             display: none;
         }
@@ -64,7 +64,7 @@
 }
 .section__title::before {
     content: "";
-    background-color: $secondary;
+    background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);;
     border-top: 1px solid #D9FFF5;
     height: 100%;
     position: absolute;
@@ -157,8 +157,25 @@
         content: 'Срок';
     }
 }
-.section__tbl-btn {
-    
+.section__aside {
+    @include fontTTLakes(400, 14px, 20px, 0.2px, $main-font);
+    max-width: 421px;
+}
+.section__activity {
+    @include fontTTLakes(500, 16px, 24px, -0.2px, $main-font);
+    text-align: start;
+
+    &:hover {
+        color: $main-accent;
+    }
+}
+.section__activity-icon {
+    vertical-align: middle;
+    margin-left: 5px;
+
+    > path {
+        fill: $main-accent;
+    }
 }
 @media (min-width: $tablet-width) {
     .section {
@@ -173,6 +190,8 @@
             .section__overlay {
                 overflow: hidden;
             }
+        }
+        &:nth-child(2), &:nth-child(3) {
             .section__readmore {
                 display: inline-block;
             }
@@ -213,6 +232,36 @@
     }
     .section__swiper {
         height: auto;
+    }
+    .section__table {
+        display: table;
+    }
+    .section__tbl-row {
+        display: table-row;
+        background-color: transparent;
+        height: auto;
+    }
+    .section__tbl-data {
+        display: table-cell;
+        padding: 23px 16px;
+
+        &::before {
+            display: none;
+        }
+        &:nth-of-type(3) {
+            white-space: nowrap;
+        }
+    }
+    .section__tbl-head {
+        display: table-header-group;
+    }
+    .section__tbl-body {
+        background-color: $secondary;
+    }
+    .section__tbl-header {
+        @include fontTTLakes(500, 14px, 16px, 0.2px, $secondary-font);
+        text-align: start;
+        padding: 16px;
     }
 }
 @media (min-width: $desktop-width) {

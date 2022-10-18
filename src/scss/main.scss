@@ -12,7 +12,7 @@
 }
 @media (min-width: $desktop-width) {
     .main {
-        padding-top: 11px;
+        padding: 11px $desktop 0;
         gap: 50px;
     }
 }

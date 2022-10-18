@@ -55,6 +55,6 @@ margin: 0 auto;
 }
 @media (min-width: $desktop-width) {
 .container {
-    padding: 0 $desktop 0 320px + $desktop;
+    padding: 0;
 }
 }
