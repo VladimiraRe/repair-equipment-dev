@@ -44,17 +44,31 @@ cursor: pointer;
 .container {
 width: 100vw;
 max-width: $desktop-width;
+min-height: 100vh;
 padding: 0 $mobile;
 position: relative;
 margin: 0 auto;
 }
 @media (min-width: $tablet-width) {
-.container {
-    padding: 0 $tablet;
-}
+    .container {
+        padding: 0 $tablet;
+    }
 }
 @media (min-width: $desktop-width) {
-.container {
-    padding: 0;
+    .container {
+        padding: 0;
+        display: flex;
+    }
 }
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+@media (min-width: $desktop-width) {
+    .content {
+        padding: 0 32px;
+    }
 }

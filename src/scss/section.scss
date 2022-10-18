@@ -157,13 +157,17 @@
         content: 'Срок';
     }
 }
-.section__aside {
-    @include fontTTLakes(400, 14px, 20px, 0.2px, $main-font);
+.section__footer {
     max-width: 421px;
+}
+.section__footer-txt {
+    @include fontTTLakes(400, 14px, 20px, 0.2px, $main-font);
+    margin-bottom: 17px;
 }
 .section__activity {
     @include fontTTLakes(500, 16px, 24px, -0.2px, $main-font);
     text-align: start;
+    transition: color .3s;
 
     &:hover {
         color: $main-accent;
@@ -193,7 +197,7 @@
         }
         &:nth-child(2), &:nth-child(3) {
             .section__readmore {
-                display: inline-block;
+                display: inline-flex;
             }
         }
     }

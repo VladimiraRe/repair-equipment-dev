@@ -1,28 +1,36 @@
 .readmore {
-    display: inline-block;
-    position: relative;
-    padding-left: 32px;
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+        .readmore__txt {
+            color: $main-accent;
+        }
+        .readmore__icon {
+            > path {
+                fill: $main-accent;
+            }
+        }
+    }
 }
-.readmore::before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: 0;
-    width: 7.41px;
-    height: 10.29px;
-    background: url(../img/readmore/checkmarks.svg) no-repeat center;
-    padding: 8px;
+.readmore__icon {
+    width: 24px;
+    height: 24px;
     transition: transform .5s;
+
+    > path {
+        fill: $secondary-accent;
+        transition: fill .3s;
+    }
 }
-.readmore--open::before {
-    transform: rotate(180deg);
+.readmore--open {
+    .readmore__icon {
+        transform: rotate(180deg);
+    }
 }
 .readmore__txt {
     @include fontTTLakes(500, 16px, 24px, -0.2px, $main-font);
     display: inline-block;
     opacity: 1;
-    transition: opacity .4s;
-}
-.readmore__txt--invisible {
-    opacity: 0;
+    transition: color .3s;
 }

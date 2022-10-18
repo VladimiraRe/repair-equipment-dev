@@ -30,16 +30,16 @@ function sliderInit() {
       },
       breakpoints: {
         360: {
-          slidesPerView: 1.185 + 0.165,
+          slidesPerView: 1.35,
         },
         480: {
-          slidesPerView: 1.185 + 0.515,
+          slidesPerView: 1.7,
         },
         576: {
-          slidesPerView: 1.185 + 1.115,
+          slidesPerView: 2.3,
         },
         640: {
-          slidesPerView: 1.185 + 1.315,
+          slidesPerView: 2.5,
         },
       }
     });
@@ -54,16 +54,16 @@ function sliderInit() {
       },
       breakpoints: {
         360: {
-          slidesPerView: 1.1 + 0.165,
+          slidesPerView: 1.3,
         },
         480: {
-          slidesPerView: 1.1 + 0.515,
+          slidesPerView: 1.6,
         },
         576: {
-          slidesPerView: 1.1 + 1.115,
+          slidesPerView: 2,
         },
         640: {
-          slidesPerView: 1.1 + 1.315,
+          slidesPerView: 2.2,
         },
       }
     });

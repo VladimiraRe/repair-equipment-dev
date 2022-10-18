@@ -1,18 +1,21 @@
 .main {
     padding-top: 24px;
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    flex-grow: 1;
 }
 @media (min-width: $tablet-width) {
     .main {
         padding-top: 32px;
+        padding-bottom: 47px;
         gap: 32px;
     }
 }
 @media (min-width: $desktop-width) {
     .main {
-        padding: 11px $desktop 0;
+        padding: 11px 0 50px;
         gap: 50px;
     }
 }

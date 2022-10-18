@@ -1,3 +1,9 @@
+.button__icon {
+    > path {
+        fill: $secondary;
+        transition: fill .3s;
+    }
+}
 .button {
     display: flex;
     justify-content: space-between;
@@ -10,6 +16,7 @@
     @include fontTTLakes(700, 12px, 24px, -0.15px, $secondary);
     text-transform: uppercase;
     padding: 0 12px;
+    transition: all .3s;
 
     &:hover {
         background-color: $main-accent-fade;
@@ -20,10 +27,5 @@
                 fill: $main-accent;
             }
         }
-    }
-}
-.button__icon {
-    > path {
-        fill: $secondary;
     }
 }

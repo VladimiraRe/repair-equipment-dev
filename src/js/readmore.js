@@ -10,6 +10,10 @@ for (let i = 0; i < btns.length; i++) {
         btns[el].addEventListener('click', () => {
             if (isOpen) {
                 isOpen = false;
+                if (el === 0) {
+                    textChange('Читать далее', el);
+                    return
+                }
                 textChange('Показать все', el);
                 return
             }
