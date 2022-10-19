@@ -157,12 +157,10 @@
         content: 'Срок';
     }
 }
-.section__footer {
-    max-width: 421px;
-}
-.section__footer-txt {
+.section__tbl-txt {
     @include fontTTLakes(400, 14px, 20px, 0.2px, $main-font);
     margin-bottom: 17px;
+    max-width: 421px;
 }
 .section__activity {
     @include fontTTLakes(500, 16px, 24px, -0.2px, $main-font);
@@ -239,6 +237,7 @@
     }
     .section__table {
         display: table;
+        border-collapse: collapse;
     }
     .section__tbl-row {
         display: table-row;
@@ -247,7 +246,7 @@
     }
     .section__tbl-data {
         display: table-cell;
-        padding: 23px 16px;
+        padding: 23px 0;
 
         &::before {
             display: none;
@@ -261,6 +260,19 @@
     }
     .section__tbl-body {
         background-color: $secondary;
+
+        .section__tbl-row {
+            &:not(:last-child) {
+                background: linear-gradient(to right, transparent 16px, $line 16px calc(100% - 16px), transparent calc(100% - 16px)) no-repeat bottom;
+                background-size: 100% 1px;
+                padding-left: 16px;
+            }
+
+            .section__tbl-data {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
     }
     .section__tbl-header {
         @include fontTTLakes(500, 14px, 16px, 0.2px, $secondary-font);
