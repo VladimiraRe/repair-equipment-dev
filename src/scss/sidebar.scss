@@ -1,17 +1,28 @@
 .sidebar {
     height: 100vh;
-    width: 320px;
+    width: 100vw;
     background-color: $secondary;
     position: absolute;
+    z-index: 99;
     top: 0;
     left: 0;
-    padding: 30px 24px 32px;
+    padding: $mobile-top $mobile 32px;
     display: flex;
     flex-direction: column;
     gap: 26px;
+    overflow-y: auto;
+    scrollbar-width: 0;
+    transition: transform .3s;
+    transform: translate(-100%);
+}
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+.sidebar--presence {
+    display: none;
 }
 .sidebar--position {
-    display: none;
+    transform: translate(0);
 }
 .sidebar__wrap {
     display: flex;
@@ -21,6 +32,20 @@
 .sidebar__wrap--row {
     flex-direction: row;
     gap: 16px;
+    position: sticky;
+    top: 0;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: calc(100% + 18px * 2);
+        top: -1 * $mobile-top;
+        left: 0;
+        background: $secondary;
+    }
 }
 .sidebar__logo {
     flex-grow: 1;
@@ -77,6 +102,10 @@
 @media (min-width: $tablet-width) {
     .sidebar {
         gap: 50px;
+        width: 320px;
+        padding-left: $tablet;
+        padding-right: $tablet;
+        box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
     }
     .sidebar__tel {
         margin-bottom: 40px;
@@ -86,15 +115,17 @@
     .sidebar {
         gap: 37px;
         position: sticky;
-
-        &::after {
-            content: '';
-            display: block;
-            clear: both;
-        }
+        padding-top: 30px;
+        transform: translate(0);
+        box-shadow: none;
     }
-    .sidebar--position {
+    .sidebar--presence {
         display: flex;
+    }
+    .sidebar__wrap--row {
+        .icon:first-child {
+            display: none;
+        }
     }
 }
 @media (max-height: 811px) and (orientation: landscape)  {

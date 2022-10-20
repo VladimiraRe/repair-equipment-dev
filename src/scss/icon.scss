@@ -23,7 +23,7 @@
     white-space: nowrap;
     display: none;
 }
-.icon:hover {
+.icon:not([disabled]):hover {
     > .icon__img {
         background-color: $main-accent-fade;
         transition: background-color .3s;
