@@ -9,42 +9,42 @@ checker();
 window.addEventListener('resize', () => { checker(); })
 
 function checker() {
-    console.log(isOpen)
-    if ( 768 <= window.innerWidth < 1440) {
-        is768 = true;
-        openClose();
+    if (window.innerWidth >= 320 && window.innerWidth < 768) {
+        burger.addEventListener('click', openClose, false);
     }
-    if (window.innerWidth < 320) {
-        openClose();
+    if (window.innerWidth >= 768 && window.innerWidth < 1440) {
+        burger.addEventListener('click', openClose, true);
+    }
+    if (window.innerWidth >= 1440) {
+        burger.removeEventListener('click', openClose, true);
+        burger.removeEventListener('click', openClose, false);
     }
 }
 
-function openClose() {
-    burger.addEventListener('click', () => {
-        new Promise(resolve => {
-            sidebar.classList.toggle('sidebar--presence');
-            content.classList.toggle('content--locked');
-            setTimeout(() => {
-                sidebar.classList.toggle('sidebar--position');
-            }, 100);
+function openClose(is768) {
+    new Promise(resolve => {
+        sidebar.classList.toggle('sidebar--presence');
+        content.classList.toggle('content--locked');
+        setTimeout(() => {
+            sidebar.classList.toggle('sidebar--position');
+        }, 100);
 
-            burger.setAttribute('disabled', true);
+        burger.setAttribute('disabled', true);
 
-            resolve(true);
-        })
-        .then((response) => {
-            isOpen = response;
-            if (isOpen) {
-                return closeSidebar();
-            }
-        })
-        .then((response) => {
-            isOpen = response;
-        });
+        resolve(true);
+    })
+    .then((response) => {
+        isOpen = response;
+        if (isOpen) {
+            return closeSidebar(is768);
+        }
+    })
+    .then((response) => {
+        isOpen = response;
     });
 }
 
-function closeSidebar() {
+function closeSidebar(is768) {
     return new Promise(resolve => {
         closeBtn.addEventListener('click', close);
         document.addEventListener('keydown', closeByEsc);
