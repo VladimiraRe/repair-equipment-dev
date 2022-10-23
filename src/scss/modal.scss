@@ -1,0 +1,128 @@
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: $secondary;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    padding: $mobile-top $mobile 32px;
+    scrollbar-width: 0;
+    border: none;
+    overflow-y: auto;
+    transition: transform .3s;
+    display: none;
+
+    @media (min-width: $tablet-width) {
+        width: 440px;
+        border-left: 1px solid $color-line;
+        box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+        padding: 40px $tablet 0;
+        overflow: visible; 
+    }
+
+    @media (min-width: $desktop-width) {
+        padding-left: $desktop;
+        padding-right: $desktop;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &--position {
+        transform: translate(100%);
+
+        @media (min-width: $tablet-width) {
+            transform: translate(calc(100% + 64px));
+        }
+    }
+
+    &--open {
+        display: block;
+    }
+}
+.modal__header {
+    position: sticky;
+    top: 0;
+    padding-bottom: $mobile-top;
+    z-index: 1;
+
+    @media (min-width: $tablet-width) {
+        position: relative;
+        display: contents;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: calc(100% + 16px * 2);
+        height: calc(100% + 18px * 2);
+        top: -1 * $mobile-top;
+        left: -1 * $mobile;
+        background: $secondary;
+
+        @media (min-width: $tablet-width) {
+            display: none;
+        }
+    }
+}
+.modal__close {
+    @media (min-width: $tablet-width) {
+        position: absolute;
+        top: 32px;
+        left: -1 * $desktop * 2;
+        z-index: 99;
+    }
+}
+.modal__body {
+    @media (min-width: $tablet-width) {
+        height: 100vh;
+        overflow-y: auto;
+        padding-bottom: 32px + 40px;
+    }
+}
+.modal__title {
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (min-width: $tablet-width) {
+        padding-top: 0;
+    }
+}
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.modal__input, .modal__textarea {
+    @include fontTTLakes(400, 16px, 24px, -0.2px, $main-font);
+    padding: 12px 16px;
+    border: 1px solid $line;
+    border-radius: 8px;
+    width: 100%;
+}
+.modal__input {
+    height: 48px;
+}
+.modal__input::placeholder, .modal__textarea::placeholder {
+    @include fontTTLakes(400, 16px, 24px, -0.2px, $modal-font);
+}
+.modal__textarea {
+    height: 118px;
+    resize: none;
+}
+.modal__txt {
+    @include fontTTLakes(400, 14px, 16px, 0, $secondary-font);
+    margin-bottom: 19px;
+}
+.modal__accent {
+    color: $main-accent;
+}
+.modal__btn {
+    margin-left: auto;
+}
+

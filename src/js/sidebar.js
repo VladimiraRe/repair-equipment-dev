@@ -1,63 +1,39 @@
 const burger = document.querySelector('.header__burger');
 const sidebar = document.querySelector('.sidebar');
 const closeBtn = sidebar.querySelector('.sidebar__wrap--row .icon:first-child');
-const content = document.querySelector('.content');
+const container = document.querySelector('.container');
 
-var isOpen = false;
 checker();
-
 window.addEventListener('resize', () => { checker(); })
 
 function checker() {
-    if (window.innerWidth >= 320 && window.innerWidth < 768) {
-        burger.addEventListener('click', openClose, false);
-    }
-    if (window.innerWidth >= 768 && window.innerWidth < 1440) {
-        burger.addEventListener('click', openClose, true);
-    }
-    if (window.innerWidth >= 1440) {
-        burger.removeEventListener('click', openClose, true);
-        burger.removeEventListener('click', openClose, false);
-    }
-}
-
-function openClose(is768) {
-    new Promise(resolve => {
-        sidebar.classList.toggle('sidebar--presence');
-        content.classList.toggle('content--locked');
-        setTimeout(() => {
-            sidebar.classList.toggle('sidebar--position');
-        }, 100);
-
-        burger.setAttribute('disabled', true);
-
-        resolve(true);
-    })
-    .then((response) => {
-        isOpen = response;
-        if (isOpen) {
-            return closeSidebar(is768);
-        }
-    })
-    .then((response) => {
-        isOpen = response;
-    });
-}
-
-function closeSidebar(is768) {
-    return new Promise(resolve => {
-        closeBtn.addEventListener('click', close);
-        document.addEventListener('keydown', closeByEsc);
-        if (is768) {
-            content.addEventListener('click', closeByClickOnContent);
-        }
-        resolve(false);
-    });
-}
-
-function closeByEsc(evt) {
-    if (evt.key === 'Escape') {
+    if (sidebar.classList.contains('sidebar--open') && 
+    document.documentElement.clientWidth >= 1440) {
         close();
+    }
+
+    if (document.documentElement.clientWidth < 1440) {
+        burger.addEventListener('click', openClose);
+    }
+}
+
+function openClose() {
+    openSidebar();
+    sidebar.addEventListener('transitionend', closeSidebar, {once: true});
+}
+
+function openSidebar() {
+    container.classList.add('container--locked');
+    sidebar.classList.add('sidebar--open');
+    setTimeout(() => {
+        sidebar.classList.remove('sidebar--position');
+    }, 100)
+}
+
+function closeSidebar() {
+    closeBtn.addEventListener('click', close);
+    if (document.documentElement.clientWidth >= 768) {
+        container.addEventListener('click', closeByClickOnContent);
     }
 }
 
@@ -68,17 +44,14 @@ function closeByClickOnContent(evt) {
 }
 
 function close() {
-    sidebar.classList.toggle('sidebar--position');
-    content.classList.toggle('content--locked');
+    container.classList.remove('container--locked');
+    sidebar.classList.add('sidebar--position');
     setTimeout(() => {
-        sidebar.classList.toggle('sidebar--presence');
-    }, 100)
-
-    burger.removeAttribute('disabled');
+        sidebar.classList.remove('sidebar--open');
+    }, 100);
 
     closeBtn.removeEventListener('click', close);
-    document.removeEventListener('keydown', closeByEsc);
-    content.removeEventListener('click', closeByClickOnContent);
+    container.removeEventListener('click', closeByClickOnContent);
 }
 
 

@@ -7,6 +7,21 @@
     width: 100%;
     position: relative;
 
+    @media (min-width: $tablet-width) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 32px 0 25px;
+
+        > .footer__txt {
+            text-align: end;
+            flex-basis: 33%;
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        padding: 32px 0 21px;
+    }
+
     &::before {
         content: '';
         border-top: 1px solid #D9FFF5;
@@ -17,6 +32,11 @@
         right: -1 * $mobile;
     }
 }
+.footer__link {
+    @media (min-width: $tablet-width) {
+        flex-basis: 33%;
+    }
+}
 .footer__txt, .footer__link, .footer__link:visited {
     @include fontTTLakes(400, 14px, 16px, 0, $secondary-font);
     text-align: center;
@@ -25,32 +45,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-@media (min-width: $tablet-width) {
-    .footer {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 32px 0 25px;
 
-        > .footer__txt {
-            text-align: end;
-            flex-basis: 33%;
-        }
-    }
-    .footer__wrap {
+    @media (min-width: $tablet-width) {
         align-items: flex-start;
         flex-basis: 33%;
 
         .footer__txt {
             text-align: start;
         }
-    }
-    .footer__link {
-        flex-basis: 33%;
-    }
-}
-@media (min-width: $desktop-width) {
-    .footer {
-        padding: 32px 0 21px;
     }
 }

@@ -3,20 +3,16 @@
     flex-direction: column;
     gap: 16px;
 
-    &:first-child .section__overlay {
-        max-height: 90px;
-        overflow: hidden;
+    @media (min-width: $tablet-width) {
+        gap: 24px;
     }
-    &:nth-child(2), &:nth-child(3) {
-        .section__readmore {
-            display: none;
-        }
-    }
+
     &:nth-child(2) {
         .section__swiper {
             height: 100px;
         }
     }
+
     &:nth-child(3) {
         .section__card {
             height: 160px;
@@ -31,6 +27,51 @@
             margin-top: auto;
         }
     }
+
+    &:first-child .section__overlay {
+        max-height: 90px;
+        overflow: hidden;
+
+        @media (min-width: $tablet-width) {
+            max-height: 160px;
+        }
+    }
+    &:nth-child(2), &:nth-child(3) {
+        @media (min-width: $tablet-width) {
+            align-items: flex-start;
+        }
+
+        .section__readmore {
+            display: none;
+
+            @media (min-width: $tablet-width) {
+                display: inline-flex;
+            }
+        }
+
+        .section__swiper {
+            @media (min-width: $tablet-width) {
+                height: auto;
+            }
+        }
+
+        .section__overlay {
+            @media (min-width: $tablet-width) {
+                overflow: hidden;
+            }
+        }
+    }
+
+    &--row {
+        @media (min-width: $tablet-width) {
+            flex-direction: row;
+            gap: 48px;
+        }
+
+        @media (min-width: $desktop-width) {
+            gap: 51px;
+        }
+    }
 }
 .section__text-box {
     display: flex;
@@ -39,9 +80,17 @@
     margin-bottom: 16px;
     max-height: 500px;
     transition: max-height .3s;
+
+    @media (min-width: $desktop-width) {
+        max-height: 350px;
+    }
 }
 .section__text {
     @include fontTTLakes(400, 14px, 18px, 0.2px, $main-font);
+
+    @media (min-width: $tablet-width) {
+        line-height: 20px;
+    }
 }
 .section__demo-material {
     width: 100vw;
@@ -50,6 +99,17 @@
     overflow: hidden;
     display: flex;
     align-items: center;
+
+    @media (min-width: $tablet-width) {
+        width: 360px;
+        height: 208px;
+        flex-shrink: 0;
+    }
+
+    @media (min-width: $desktop-width) {
+        width: 531.35px;
+        height: 307px;
+    }
 }
 .section__photo {
     width: 100%;
@@ -61,23 +121,59 @@
     position: relative;
     padding: 16px 0;
     width: 100%;
+
+    &::before {
+        content: "";
+        background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);;
+        border-top: 1px solid $color-line;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: -1 * $mobile;
+        right: -1 * $mobile;
+
+        @media (min-width: $tablet-width) {
+            left: -1 * $tablet;
+            right: -1 * $tablet;
+        }
+
+        @media (min-width: $desktop-width) {
+            left: -1 * $desktop;
+            right: -1 * $desktop;
+        }
+    }
 }
-.section__title::before {
-    content: "";
-    background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);;
-    border-top: 1px solid #D9FFF5;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: -1 * $mobile;
-    right: -1 * $mobile;
+.section__cards {
+    @media (min-width: $tablet-width) {
+        display: flex;
+        align-items: center;
+        row-gap: 16px;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        max-height: 350px;
+        transition: max-height .3s;
+    }
+
+    @media (min-width: $desktop-width) {
+        column-gap: 32px;
+        max-height: 250px;
+    }
 }
 .section__card {
     background-color: $secondary;
     border-radius: 6px;
     width: 240px;
     height: 72px;
+
+    @media (min-width: $tablet-width) {
+        width: 224px;
+        flex-shrink: 0;
+    }
+
+    @media (min-width: $desktop-width) {
+        width: 240px;
+    }
 }
 .section__card-link {
     display: flex;
@@ -87,6 +183,18 @@
     max-width: 100%;
     height: 100%;
     box-sizing: border-box;
+
+    &:hover {
+        .section__card-icon {
+            fill: $main-accent--fade;
+            transition: fill .3s;
+    
+            > rect {
+                stroke: transparent;
+                transition: stroke .3s;
+            }
+        }
+    }
 }
 .section__card-icon {
     fill: $secondary; 
@@ -98,30 +206,71 @@
         fill: $main-accent;
     }
 }
-.section__card-link:hover {
-    .section__card-icon {
-        fill: $main-accent-fade;
-        transition: fill .3s;
-
-        > rect {
-            stroke: transparent;
-            transition: stroke .3s;
-        }
+.section__overlay {
+    @media (min-width: $tablet-width) {
+        max-height: 160px;
     }
 }
-.section__swiper,
-.section__swiper--big {
+.section__swiper {
     width: 100%;
     height: 228px;
+
+    @media (min-width: $tablet-width) {
+        height: auto;
+    }
+
+    &--big {
+        width: 100%;
+        height: 228px;
+    }
 }
 .section__swiper-pagination {
     bottom: 0 !important;
 }
 .section__table {
     display: block;
+
+    @media (min-width: $tablet-width) {
+        display: table;
+        border-collapse: collapse;
+    }
 }
 .section__tbl-head {
     display: none;
+
+    @media (min-width: $tablet-width) {
+        display: table-header-group;
+    }
+}
+.section__tbl-header {
+    @media (min-width: $tablet-width) {
+        @include fontTTLakes(500, 14px, 16px, 0.2px, $secondary-font);
+        text-align: start;
+        padding: 16px;
+    }
+}
+.section__tbl-body {
+    @media (min-width: $tablet-width) {
+        background-color: $secondary;
+    }
+
+    .section__tbl-row {
+
+        &:not(:last-child) {
+            @media (min-width: $tablet-width) {
+                background: linear-gradient(to right, transparent 16px, $line 16px calc(100% - 16px), transparent calc(100% - 16px)) no-repeat bottom;
+                background-size: 100% 1px;
+                padding-left: 16px;
+            }
+        }
+
+        .section__tbl-data {
+            @media (min-width: $tablet-width) {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+    }
 }
 .section__tbl-row {
     background-color: $secondary;
@@ -133,28 +282,54 @@
     justify-content: space-between;
     align-items: center;
     align-content: space-between;
+
+    @media (min-width: $tablet-width) {
+        display: table-row;
+        background-color: transparent;
+        height: auto;
+    }
 }
 .section__tbl-data {
     display: flex;
     flex-direction: column;
+
+    @media (min-width: $tablet-width) {
+        display: table-cell;
+        padding: 23px 0;
+    }
+
     &::before {
         margin-bottom: 4px;
         @include fontTTLakes(500, 14px, 16px, 0.2px, $secondary-font);
+
+        @media (min-width: $tablet-width) {
+            display: none;
+        }
     }
+
     &:first-of-type {
         flex-basis: 100%;
         &::before {
             content: 'Ремонтные услуги';
         }
     }
+
     &:nth-of-type(2) {
         flex-basis: 100%;
         &::before {
             content: 'Цена';
         }
     }
-    &:nth-of-type(3)::before {
-        content: 'Срок';
+
+    &:nth-of-type(3) {
+
+        @media (min-width: $tablet-width) {
+            white-space: nowrap;
+        }
+
+        &::before {
+            content: 'Срок';
+        }
     }
 }
 .section__tbl-txt {
@@ -177,132 +352,5 @@
 
     > path {
         fill: $main-accent;
-    }
-}
-@media (min-width: $tablet-width) {
-    .section {
-        gap: 24px;
-        &:nth-child(2), &:nth-child(3) {
-            align-items: flex-start;
-
-            .section__swiper {
-                height: auto;
-            }
-
-            .section__overlay {
-                overflow: hidden;
-            }
-        }
-        &:nth-child(2), &:nth-child(3) {
-            .section__readmore {
-                display: inline-flex;
-            }
-        }
-    }
-    .section--row {
-        flex-direction: row;
-        gap: 48px;
-    }
-    .section__demo-material {
-        width: 360px;
-        height: 208px;
-        flex-shrink: 0;
-    }
-    .section__text {
-        line-height: 20px;
-    }
-    .section__title::before {
-        left: -1 * $tablet;
-        right: -1 * $tablet;
-    }
-    .section__cards {
-        display: flex;
-        align-items: center;
-        row-gap: 16px;
-        flex-wrap: wrap;
-        column-gap: 24px;
-        max-height: 350px;
-        transition: max-height .3s;
-    }
-    .section:first-child .section__overlay,
-    .section__overlay {
-        max-height: 160px;
-    }
-    .section__card {
-        width: 224px;
-        flex-shrink: 0;
-    }
-    .section__swiper {
-        height: auto;
-    }
-    .section__table {
-        display: table;
-        border-collapse: collapse;
-    }
-    .section__tbl-row {
-        display: table-row;
-        background-color: transparent;
-        height: auto;
-    }
-    .section__tbl-data {
-        display: table-cell;
-        padding: 23px 0;
-
-        &::before {
-            display: none;
-        }
-        &:nth-of-type(3) {
-            white-space: nowrap;
-        }
-    }
-    .section__tbl-head {
-        display: table-header-group;
-    }
-    .section__tbl-body {
-        background-color: $secondary;
-
-        .section__tbl-row {
-            &:not(:last-child) {
-                background: linear-gradient(to right, transparent 16px, $line 16px calc(100% - 16px), transparent calc(100% - 16px)) no-repeat bottom;
-                background-size: 100% 1px;
-                padding-left: 16px;
-            }
-
-            .section__tbl-data {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-        }
-    }
-    .section__tbl-header {
-        @include fontTTLakes(500, 14px, 16px, 0.2px, $secondary-font);
-        text-align: start;
-        padding: 16px;
-    }
-}
-@media (min-width: $desktop-width) {
-    .section--row {
-        gap: 51px;
-    }
-    .section__text-box {
-        max-height: 350px;
-    }
-    .section__demo-material {
-        width: 531.35px;
-        height: 307px;
-    }
-    .section__title::before {
-        left: -1 * $desktop;
-        right: -1 * $desktop;
-    }
-    .section__cards {
-        column-gap: 32px;
-        max-height: 250px;
-    }
-    .section__card {
-        width: 240px;
-    }
-    .section__overlay {
-        max-height: 160px;
     }
 }

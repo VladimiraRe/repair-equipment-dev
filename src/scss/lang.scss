@@ -1,5 +1,11 @@
 .lang__input {
     display: none;
+
+    &:checked {
+        + .lang__label {
+            color: $secondary-font;
+        }
+    }
 }
 .lang__fieldset {
     display: flex;
@@ -8,9 +14,4 @@
 .lang__label {
     @include fontTTLakes(400, 16px, 24px, -0.2px, $main-font);
     text-transform: uppercase;
-}
-.lang__input:checked {
-    + .lang__label {
-        color: $secondary-font;
-    }
 }

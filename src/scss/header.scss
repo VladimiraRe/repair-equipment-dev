@@ -5,117 +5,125 @@
     background-color: $secondary;
     position: relative;
     padding: 18px $mobile;
-    border-bottom: 1px solid #D9FFF5;
-}
-.header--position {
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
+    border-bottom: 1px solid $color-line;
+
+    @media (min-width: $tablet-width) {
+        padding-left: $tablet;
+        padding-right: $tablet;
+    }
+
+    &--position {
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (min-width: $desktop-width) {
+            display: contents;
+        }
+    }
 }
 .header__wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-}
-.header__wrap:first-of-type {
-    gap: 16px;
-}
-.header__wrap::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    margin-top: -16px;
-    left: -20px;
-    height: 32px;
-    width: 2px;
-    border-radius: 1px;
-    background-color: $line;
-}
-.header__wrap:first-of-type::before {
-    display: none;
+
+    @media (min-width: $tablet-width) {
+        gap: 42px;
+    }
+
+    &:first-of-type {
+        gap: 16px;
+
+        @media (max-width: 319px) {
+            flex-grow: 1;
+        }
+
+        @media (min-width: $tablet-width) {
+            gap: 42px;
+        }
+
+        @media (min-width: $desktop-width) {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+
+            @media (min-width: $tablet-width) {
+                display: inline;
+                left: 61px;
+            }
+        }
+    }
+
+    &:last-of-type {
+        @media (max-width: 319px) {
+            display: none;
+        }
+
+        &::before {
+            @media (max-width: 319px) {
+                display: none;
+            }
+
+            @media (min-width: $tablet-width) {
+                display: inline;
+                left: 173px;
+            }
+
+            @media (min-width: $desktop-width) {
+                display: none;
+            }
+        }
+
+        > .header__list {
+            &:first-of-type {
+                display: none;
+
+                @media (min-width: $tablet-width) {
+                    display: flex;
+                }
+
+                @media (min-width: $desktop-width) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -16px;
+        left: -20px;
+        height: 32px;
+        width: 2px;
+        border-radius: 1px;
+        background-color: $line;
+    }
 }
 .header__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-}
-.header__wrap:last-of-type {
-    > .header__list:first-of-type {
-        display: none;
-    }
-}
-.header__item {
-    font-size: 0;
-    display: flex;
-    align-items: center;
-}
-@media (max-width: 319px) {
-    .header__wrap:first-of-type {
-        flex-grow: 1;
-    }
-    .header__wrap:last-of-type {
-        display: none;
-    }
-    .header__wrap:last-of-type::before {
-        display: none;
-    }
-}
-@media (min-width: 330px) {
-    .header__wrap:last-of-type::before {
-        display: none;
-    }
-}
-@media (min-width: $tablet-width) {
-    .header {
-        padding-left: $tablet;
-        padding-right: $tablet;
-    }
-    .header__wrap:first-of-type,
-    .header__wrap {
-        gap: 42px;
-    }
-    .header__wrap:first-of-type::before {
-        display: inline;
-        left: 61px;
-    }
-    .header__wrap:last-of-type::before {
-        display: inline;
-        left: 173px;
-    }
-    .header__wrap:last-of-type {
-        > .header__list:first-of-type {
-            display: flex;
-        }
-    }
-}
-@media (min-width: $desktop-width) {
-    .header--position {
-        display: contents;
-    }
-    .header__wrap:first-of-type {
-        display: none;
-    }
-    .header__wrap:last-of-type::before {
-        display: none;
-    }
-    .header__wrap:last-of-type {
-        > .header__list:first-of-type {
-            display: none;
-        }
-    }
-    .header__list {
+
+    @media (min-width: $desktop-width) {
         position: absolute;
         top: 42px;
         right: 0;
         z-index: 1;
         gap: 32px;
     }
-    .header__item {
+}
+.header__item {
+    font-size: 0;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $desktop-width) {
         gap: 8px;
-    }
-    .header__line--right {
-        display: none;
     }
 }

@@ -12,6 +12,12 @@
             }
         }
     }
+
+    &--open {
+        .readmore__icon {
+            transform: rotate(180deg);
+        }
+    }
 }
 .readmore__icon {
     width: 24px;
@@ -21,11 +27,6 @@
     > path {
         fill: $secondary-accent;
         transition: fill .3s;
-    }
-}
-.readmore--open {
-    .readmore__icon {
-        transform: rotate(180deg);
     }
 }
 .readmore__txt {

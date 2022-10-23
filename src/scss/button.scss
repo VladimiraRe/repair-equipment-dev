@@ -19,7 +19,7 @@
     transition: all .3s;
 
     &:hover {
-        background-color: $main-accent-fade;
+        background-color: $main-accent--fade;
         color: $main-accent;
 
         .button__icon {
