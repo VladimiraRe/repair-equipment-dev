@@ -1,1 +1,1 @@
-https://vladimirare.github.io/equipment-repair-service/dist/index.html
+https://vladimirare.github.io/1.6/dist/index.html
