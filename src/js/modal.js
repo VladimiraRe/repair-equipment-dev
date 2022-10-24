@@ -16,13 +16,6 @@ checker();
 window.addEventListener('resize', () => { checker(); })
 
 function checker() {
-    modals.forEach((i) => {
-        if (i.classList.contains('modal--open') && 
-        document.documentElement.clientWidth >= 1440) {
-            sidebar.classList.add('sidebar--locked');
-        }       
-    });
-
     for (let i = 0; i < modalBtnsArray.length; i++) {
         function catchBtn(currentItem) {
             let isSidebarOpen = false;
@@ -33,22 +26,31 @@ function checker() {
                 item = item - modals.length;
             }
 
-            modalBtnsArray[currentItem].addEventListener('click', () => { openClose(item, isSidebarOpen) });
+            htmlObj = modals[item];
+            closeBtn = closeBtns[item];
+
+            if (htmlObj.classList.contains('modal--open') &&
+            document.documentElement.clientWidth >= 768) {
+            container.addEventListener('click', closeByClickOnContent);
+
+                if (document.documentElement.clientWidth >= 1440) {
+                    sidebar.classList.add('sidebar--locked');
+                }
+            }
+
+            modalBtnsArray[currentItem].addEventListener('click', () => { openClose(isSidebarOpen) });
         }
 
         catchBtn(i);
     }
 }
 
-function openClose(item, isSidebarOpen) {
+function openClose(isSidebarOpen) {
     if (isSidebarOpen) {
         closeSidebar();
     }
 
-    htmlObj = modals[item];
-    closeBtn = closeBtns[item];
     openModal();
-
     htmlObj.addEventListener('transitionend', closeModal, {once: true});
 }
 

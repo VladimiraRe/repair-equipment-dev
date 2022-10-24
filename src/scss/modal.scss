@@ -78,6 +78,8 @@
     }
 }
 .modal__body {
+    max-width: 376px;
+
     @media (min-width: $tablet-width) {
         height: 100vh;
         overflow-y: auto;

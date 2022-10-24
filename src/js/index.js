@@ -4,3 +4,4 @@ import './section__swiper';
 import './readmore';
 import './sidebar';
 import './modal';
+import './scroll';

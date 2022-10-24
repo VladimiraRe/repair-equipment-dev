@@ -2,6 +2,7 @@ const burger = document.querySelector('.header__burger');
 const sidebar = document.querySelector('.sidebar');
 const closeBtn = sidebar.querySelector('.sidebar__wrap--row .icon:first-child');
 const container = document.querySelector('.container');
+const sidebarMenu = sidebar.querySelectorAll('.sidebar__item');
 
 checker();
 window.addEventListener('resize', () => { checker(); })
@@ -28,6 +29,10 @@ function openSidebar() {
     setTimeout(() => {
         sidebar.classList.remove('sidebar--position');
     }, 100)
+
+    sidebarMenu.forEach((i) => {
+        i.addEventListener('click', close);
+    })
 }
 
 function closeSidebar() {
