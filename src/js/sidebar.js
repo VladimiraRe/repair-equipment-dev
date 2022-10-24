@@ -31,7 +31,9 @@ function openSidebar() {
     }, 100)
 
     sidebarMenu.forEach((i) => {
-        i.addEventListener('click', close);
+        if (document.documentElement.clientWidth < 1440) {
+            i.addEventListener('click', close);
+        }
     })
 }
 
@@ -57,6 +59,7 @@ function close() {
 
     closeBtn.removeEventListener('click', close);
     container.removeEventListener('click', closeByClickOnContent);
+    sidebarMenu.forEach((i) => {i.removeEventListener('click', close);})
 }
 
 

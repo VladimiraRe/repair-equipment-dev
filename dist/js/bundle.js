@@ -462,7 +462,9 @@ function openSidebar() {
     sidebar.classList.remove('sidebar--position');
   }, 100);
   sidebarMenu.forEach(function (i) {
-    i.addEventListener('click', close);
+    if (document.documentElement.clientWidth < 1440) {
+      i.addEventListener('click', close);
+    }
   });
 }
 
@@ -488,6 +490,9 @@ function close() {
   }, 100);
   closeBtn.removeEventListener('click', close);
   container.removeEventListener('click', closeByClickOnContent);
+  sidebarMenu.forEach(function (i) {
+    i.removeEventListener('click', close);
+  });
 }
 
 /***/ }),

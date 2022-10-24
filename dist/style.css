@@ -818,14 +818,14 @@ label {
     flex-wrap: wrap;
     -moz-column-gap: 24px;
          column-gap: 24px;
-    max-height: 350px;
+    max-height: 512px;
     transition: max-height .3s; } }
 
 @media (min-width: 1440px) {
   .section__cards {
     -moz-column-gap: 32px;
          column-gap: 32px;
-    max-height: 250px; } }
+    max-height: 336px; } }
 
 .section__card {
   background-color: #FFFFFF;
