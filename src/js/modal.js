@@ -26,29 +26,31 @@ function checker() {
                 item = item - modals.length;
             }
 
-            htmlObj = modals[item];
-            closeBtn = closeBtns[item];
-
-            if (htmlObj.classList.contains('modal--open') &&
+            if (modals[item].classList.contains('modal--open') &&
             document.documentElement.clientWidth >= 768) {
-            container.addEventListener('click', closeByClickOnContent);
+                
+                htmlObj = modals[item];
+                container.addEventListener('click', closeByClickOnContent);
 
                 if (document.documentElement.clientWidth >= 1440) {
                     sidebar.classList.add('sidebar--locked');
                 }
             }
 
-            modalBtnsArray[currentItem].addEventListener('click', () => { openClose(isSidebarOpen) });
+            modalBtnsArray[currentItem].addEventListener('click', () => { openClose(isSidebarOpen, item) });
         }
 
         catchBtn(i);
     }
 }
 
-function openClose(isSidebarOpen) {
+function openClose(isSidebarOpen, item) {
     if (isSidebarOpen) {
         closeSidebar();
     }
+
+    htmlObj = modals[item];
+    closeBtn = closeBtns[item];
 
     openModal();
     htmlObj.addEventListener('transitionend', closeModal, {once: true});
