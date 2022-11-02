@@ -84,6 +84,11 @@
             top: -1 * $mobile-top;
             left: 0;
             background: $secondary;
+
+            @media (min-width: $desktop-width) {
+                height: calc(100% + 30px * 2);
+                top: -30px;
+            }
         }
     }
 }
