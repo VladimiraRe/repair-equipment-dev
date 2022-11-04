@@ -5,12 +5,8 @@
     display: flex;
     align-items: center;
 
-    @media (min-width: $tablet-width) {
-        padding-bottom: 32px;
-    }
-
     @media (min-width: $desktop-width) {
-        padding: 42px 0 8px;
+        padding-top: 0;
     }
 
     &::before {
@@ -28,6 +24,17 @@
         
         @media (min-width: $desktop-width) {
             left: -1 * $desktop;
+        }
+    }
+
+    &--position {
+
+        @media (min-width: $tablet-width) {
+            padding-bottom: 32px;
+        }
+
+        @media (min-width: $desktop-width) {
+            padding-bottom: 8px;
         }
     }
 }
