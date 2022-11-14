@@ -26,7 +26,7 @@
                     <span class="icon__img">
                         <svg role="img" aria-label="Поиск по сайту" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5006 11.0006H11.7106L11.4306 10.7306C12.6306 9.33063 13.2506 7.42063 12.9106 5.39063C12.4406 2.61063 10.1206 0.390626 7.32063 0.0506256C3.09063 -0.469374 -0.469374 3.09063 0.0506256 7.32063C0.390626 10.1206 2.61063 12.4406 5.39063 12.9106C7.42063 13.2506 9.33063 12.6306 10.7306 11.4306L11.0006 11.7106V12.5006L15.2606 16.7506C15.6706 17.1606 16.3306 17.1606 16.7406 16.7506L16.7506 16.7406C17.1606 16.3306 17.1606 15.6706 16.7506 15.2606L12.5006 11.0006ZM6.50063 11.0006C4.01063 11.0006 2.00063 8.99063 2.00063 6.50063C2.00063 4.01063 4.01063 2.00063 6.50063 2.00063C8.99063 2.00063 11.0006 4.01063 11.0006 6.50063C11.0006 8.99063 8.99063 11.0006 6.50063 11.0006Z"/>
-                            </svg>
+                        </svg>
                     </span>
                 </button>
             </div>
@@ -49,7 +49,7 @@
                             <span class="icon__img">
                                 <svg role="img" aria-label="Позвонить" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1.76019 12.25L4.30019 11.96C4.91019 11.89 5.51019 12.1 5.94019 12.53L7.78019 14.37C10.6102 12.93 12.9302 10.62 14.3702 7.78L12.5202 5.93C12.0902 5.5 11.8802 4.9 11.9502 4.29L12.2402 1.77C12.3602 0.76 13.2102 0 14.2302 0H15.9602C17.0902 0 18.0302 0.94 17.9602 2.07C17.4302 10.61 10.6002 17.43 2.07019 17.96C0.940193 18.03 0.00019455 17.09 0.00019455 15.96V14.23C-0.00980568 13.22 0.750193 12.37 1.76019 12.25Z"/>
-                                    </svg>
+                                </svg>
                             </span>
                         </button>
                     </li>
@@ -75,7 +75,7 @@
                 </ul>
                 <a href="mailto:mail@cps.com" class="sidebar__mail">mail@cps.com</a>
                 <a href="tel:+78008908900" class="sidebar__tel">8 800 890 8900</a>
-                <form action="#" class="lang">
+                <form class="lang">
                     <fieldset class="lang__fieldset">
                         <input type="radio" name="lang" id="ru" checked="checked" class="lang__input">
                         <label for="ru" class="lang__label">RU</label>
@@ -87,8 +87,8 @@
                 </form>
             </div>
         </aside>
-        <aside class="modal modal--position">
-            <div class="modal__header">
+        <div class="modal__wrapper modal__wrapper--position">
+            <aside class="modal">
                 <button class="icon modal__close">
                     <span class="icon__img">
                         <svg role="img" aria-label="Закрыть меню" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
@@ -96,48 +96,44 @@
                         </svg>
                     </span>
                 </button>
-            </div>
-            <section class="modal__body">
+                <h3 class="title modal__title">Заказать звонок</h3>
+                <form class="modal__form" id="call">
+                    <input type="tel" class="modal__input" placeholder="Телефон" required>
+                </form>
+                <p class="modal__txt">Нажимая “отправить”, вы даете согласие на <span class="modal__accent">на обработку
+                        персональных данных</span> и соглашаетесь с нашей <a href="#"><span class="modal__accent">политикой конфиденциальности</span></a></p>
+                <button class="button modal__btn" type="submit" form="call">
+                    Отправить
+                    <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
+                    </svg>
+                </button>
+            </aside>
+            <aside class="modal">
+                <button class="icon modal__close">
+                    <span class="icon__img">
+                        <svg role="img" aria-label="Закрыть меню" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.79348 1.25712C2.40295 0.866593 1.76979 0.866592 1.37927 1.25712L1.25712 1.37927C0.866592 1.76979 0.866593 2.40296 1.25712 2.79348L7.46364 9L1.25712 15.2065C0.866593 15.597 0.866592 16.2302 1.25712 16.6207L1.37927 16.7429C1.76979 17.1334 2.40295 17.1334 2.79348 16.7429L9 10.5364L15.2065 16.7429C15.597 17.1334 16.2302 17.1334 16.6207 16.7429L16.7429 16.6207C17.1334 16.2302 17.1334 15.597 16.7429 15.2065L10.5364 9L16.7429 2.79348C17.1334 2.40296 17.1334 1.76979 16.7429 1.37927L16.6207 1.25712C16.2302 0.866592 15.597 0.866593 15.2065 1.25712L9 7.46364L2.79348 1.25712Z"/>
+                        </svg>
+                    </span>
+                </button>
                 <h3 class="title modal__title">Обратная связь</h3>
-                <form action="" class="modal__form" id="feedback">
+                <form class="modal__form" id="feedback">
                     <input type="text" class="modal__input" placeholder="Имя" required>
                     <input type="tel" class="modal__input" placeholder="Телефон" required>
                     <input type="email" class="modal__input" placeholder="Электронная почта" required>
                     <textarea placeholder="Сообщение" name="" id="" cols="30" rows="10" class="modal__textarea"></textarea>
                 </form>
-                    <p class="modal__txt">Нажимая “отправить”, вы даете согласие на <span class="modal__accent">на обработку персональных данных</span> и соглашаетесь с нашей <a href="#"><span class="modal__accent">политикой конфиденциальности</span></a></p>
-                    <button class="button modal__btn" type="submit" form="feedback">
-                        Отправить
-                        <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
-                        </svg>
-                    </button>
-            </section>
-        </aside>
-        <aside class="modal modal--position">
-            <div class="modal__header">
-                <button class="icon modal__close">
-                    <span class="icon__img">
-                        <svg role="img" aria-label="Закрыть меню" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.79348 1.25712C2.40295 0.866593 1.76979 0.866592 1.37927 1.25712L1.25712 1.37927C0.866592 1.76979 0.866593 2.40296 1.25712 2.79348L7.46364 9L1.25712 15.2065C0.866593 15.597 0.866592 16.2302 1.25712 16.6207L1.37927 16.7429C1.76979 17.1334 2.40295 17.1334 2.79348 16.7429L9 10.5364L15.2065 16.7429C15.597 17.1334 16.2302 17.1334 16.6207 16.7429L16.7429 16.6207C17.1334 16.2302 17.1334 15.597 16.7429 15.2065L10.5364 9L16.7429 2.79348C17.1334 2.40296 17.1334 1.76979 16.7429 1.37927L16.6207 1.25712C16.2302 0.866592 15.597 0.866593 15.2065 1.25712L9 7.46364L2.79348 1.25712Z"/>
-                        </svg>
-                    </span>
+                <p class="modal__txt">Нажимая “отправить”, вы даете согласие на <span class="modal__accent">на обработку
+                        персональных данных</span> и соглашаетесь с нашей <a href="#"><span class="modal__accent">политикой конфиденциальности</span></a></p>
+                <button class="button modal__btn" type="submit" form="feedback">
+                    Отправить
+                    <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
+                    </svg>
                 </button>
-            </div>
-            <section class="modal__body">
-                <h3 class="title modal__title">Заказать звонок</h3>
-                <form action="" class="modal__form" id="call">
-                    <input type="tel" class="modal__input" placeholder="Телефон" required>
-                </form>
-                    <p class="modal__txt">Нажимая “отправить”, вы даете согласие на <span class="modal__accent">на обработку персональных данных</span> и соглашаетесь с нашей <a href="#"><span class="modal__accent">политикой конфиденциальности</span></a></p>
-                    <button class="button modal__btn" type="submit" form="call">
-                        Отправить
-                        <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
-                        </svg>
-                    </button>
-            </section>
-        </aside>
+            </aside>
+        </div>
         <div class="container__content">
             <header class="header header--position">
                 <div class="header__wrap">
@@ -207,14 +203,18 @@
                     </ul>
                 </div>
             </header>
-            <h1 class="title">Услуги и сервисы</h1>
+            <h1 class="title title--position">Услуги и сервисы</h1>
             <nav class="horizontal-menu">
                 <ul class="horizontal-menu__list">
                     <li class="horizontal-menu__item"><a href="#scroll__brands" class="horizontal-menu__link">Ремонтируемые бренды</a></li>
-                    <li class="horizontal-menu__item"><a href="#" class="horizontal-menu__link">Дополнительные услуги</a></li>
-                    <li class="horizontal-menu__item"><a href="#scroll__prices" class="horizontal-menu__link">Цены на услуги</a></li>
-                    <li class="horizontal-menu__item"><a href="#" class="horizontal-menu__link">Адреса сервисных центров</a></li>
-                    <li class="horizontal-menu__item"><a href="#" class="horizontal-menu__link">Специальные цены</a></li>
+                    <li class="horizontal-menu__item"><a href="#" class="horizontal-menu__link">Дополнительные
+                            услуги</a></li>
+                    <li class="horizontal-menu__item"><a href="#scroll__prices" class="horizontal-menu__link">Цены на
+                            услуги</a></li>
+                    <li class="horizontal-menu__item"><a href="#" class="horizontal-menu__link">Адреса сервисных
+                            центров</a></li>
+                    <li class="horizontal-menu__item"><a href="#" class="horizontal-menu__link">Специальные цены</a>
+                    </li>
                     <li class="horizontal-menu__item"><a href="#" class="horizontal-menu__link">Отзывы</a></li>
                 </ul>
             </nav>
@@ -222,16 +222,24 @@
                 <section class="section section--row">
                     <div class="section__intro">
                         <div class="section__text-box readmore__area-to-open section__overlay">
-                            <p class="section__text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у
-                                нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
-                            <p class="section__text">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает
-                                большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям
+                            <p class="section__text">Мы являемся авторизованным сервисным центром по ремонту техники
+                                Dell. Только у
+                                нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+                            </p>
+                            <p class="section__text">Мы успешно работаем с 1992 года и заслужили репутацию надежного
+                                партнера, что подтверждает
+                                большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по
+                                рекомендациям
                                 и, в свою очередь, советуют нас родным и близким.</p>
-                            <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellat distinctio enim
-                                incidunt aut quia, libero officia minus ducimus omnis beatae cumque dicta? Sed magni praesentium veritatis
+                            <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                                repellat distinctio enim
+                                incidunt aut quia, libero officia minus ducimus omnis beatae cumque dicta? Sed magni
+                                praesentium veritatis
                                 laboriosam eaque illum?</p>
-                            <p class="section__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium non, quas animi
-                                veritatis asperiores dolorem delectus minima. Vel, aliquid minus aut dicta dolores natus. At ipsum reiciendis
+                            <p class="section__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laudantium non, quas animi
+                                veritatis asperiores dolorem delectus minima. Vel, aliquid minus aut dicta dolores
+                                natus. At ipsum reiciendis
                                 quis nulla possimus?</p>
                         </div>
                         <button class="readmore">
@@ -250,82 +258,82 @@
                     <div class="section__swiper swiper">
                         <ul class="section__cards readmore__area-to-open section__overlay swiper-wrapper">
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/lenovo.png" alt="Логотип бренда Lenovo" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/lenovo.png" alt="Логотип бренда Lenovo" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/sumsung.png" alt="Логотип бренда Sumsung" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/sumsung.png" alt="Логотип бренда Sumsung" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/apple.png" alt="Логотип бренда Apple" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/apple.png" alt="Логотип бренда Apple" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/viewsonic.png" alt="Логотип бренда View Sonic" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/viewsonic.png" alt="Логотип бренда View Sonic" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/bosch.png" alt="Логотип бренда Bosch" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/bosch.png" alt="Логотип бренда Bosch" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/hp.png" alt="Логотип бренда HP" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/hp.png" alt="Логотип бренда HP" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/acer.png" alt="Логотип бренда Acer" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/acer.png" alt="Логотип бренда Acer" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/sony.png" alt="Логотип бренда Sony" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/sony.png" alt="Логотип бренда Sony" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/lenovo.png" alt="Логотип бренда Lenovo" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/lenovo.png" alt="Логотип бренда Lenovo" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/sumsung.png" alt="Логотип бренда Sumsung" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/sumsung.png" alt="Логотип бренда Sumsung" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <img src="./img/section/2/apple.png" alt="Логотип бренда Apple" class="section__card-img">
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <img src="./img/section/2/apple.png" alt="Логотип бренда Apple" class="section__card-img">
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                         </ul>
                         <div class="section__swiper-pagination swiper-pagination"></div>
                     </div>
@@ -341,61 +349,61 @@
                     <div class="section__swiper swiper">
                         <ul class="section__cards readmore__area-to-open section__overlay swiper-wrapper">
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <span class="section__card-text">Ремонт ноутбуков</span>
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <span class="section__card-text">Ремонт ноутбуков</span>
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <span class="section__card-text">Ремонт планшетов</span>
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <span class="section__card-text">Ремонт планшетов</span>
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <span class="section__card-text">Ремонт ПК</span>
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <span class="section__card-text">Ремонт ПК</span>
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <span class="section__card-text">Ремонт мониторов</span>
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <span class="section__card-text">Ремонт мониторов</span>
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <span class="section__card-text">Ремонт ноутбуков</span>
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <span class="section__card-text">Ремонт ноутбуков</span>
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <span class="section__card-text">Ремонт планшетов</span>
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <span class="section__card-text">Ремонт планшетов</span>
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <span class="section__card-text">Ремонт ПК</span>
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <span class="section__card-text">Ремонт ПК</span>
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                             <li class="section__card swiper-slide"><a href="#" class="section__card-link">
-                                <span class="section__card-text">Ремонт мониторов</span>
-                                <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
-                                </svg>
-                            </a></li>
+                                    <span class="section__card-text">Ремонт мониторов</span>
+                                    <svg class="section__card-icon" role="img" aria-label="Подробности" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="38" height="38" rx="19" stroke-width="2"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z"/>
+                                    </svg>
+                                </a></li>
                         </ul>
                         <div class="section__swiper-pagination swiper-pagination"></div>
                     </div>
@@ -422,64 +430,68 @@
                                 <td class="section__tbl-data">Бесплатно</td>
                                 <td class="section__tbl-data">30 мин</td>
                                 <td class="section__tbl-data"><button class="button">
-                                    Заказать
-                                    <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
-                                    </svg>
-                                </button></td>
+                                        Заказать
+                                        <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
+                                        </svg>
+                                    </button></td>
                             </tr>
                             <tr class="section__tbl-row swiper-slide">
                                 <td class="section__tbl-data">Замена дисплея</td>
                                 <td class="section__tbl-data">1 000 ₽</td>
                                 <td class="section__tbl-data">30-120 мин</td>
                                 <td class="section__tbl-data"><button class="button">
-                                    Заказать
-                                    <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
-                                    </svg>
-                                </button></td>
+                                        Заказать
+                                        <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
+                                        </svg>
+                                    </button></td>
                             </tr>
                             <tr class="section__tbl-row swiper-slide">
                                 <td class="section__tbl-data">Замена полифонического динамика</td>
                                 <td class="section__tbl-data">1 000 ₽</td>
                                 <td class="section__tbl-data">30-120 мин</td>
                                 <td class="section__tbl-data"><button class="button">
-                                    Заказать
-                                    <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
-                                    </svg>
-                                </button></td>
+                                        Заказать
+                                        <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
+                                        </svg>
+                                    </button></td>
                             </tr>
                             <tr class="section__tbl-row swiper-slide">
                                 <td class="section__tbl-data">Тестирование с выдачей технического заключения</td>
                                 <td class="section__tbl-data">1 000 ₽</td>
                                 <td class="section__tbl-data">30-120 мин</td>
                                 <td class="section__tbl-data"><button class="button">
-                                    Заказать
-                                    <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
-                                    </svg>
-                                </button></td>
+                                        Заказать
+                                        <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
+                                        </svg>
+                                    </button></td>
                             </tr>
                             <tr class="section__tbl-row swiper-slide">
                                 <td class="section__tbl-data">Замена программного обеспечения</td>
                                 <td class="section__tbl-data">1 000 ₽</td>
                                 <td class="section__tbl-data">30-120 мин</td>
                                 <td class="section__tbl-data"><button class="button">
-                                    Заказать
-                                    <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
-                                    </svg>
-                                </button></td>
+                                        Заказать
+                                        <svg class="button__icon" role="img" aria-label="Нажать на кнопку" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z"/>
+                                        </svg>
+                                    </button></td>
                             </tr>
                         </tbody>
                         <tfoot>
-                            <tr><td>
-                                <div class="section__swiper-pagination swiper-pagination"></div>
-                            </td></tr>
+                            <tr>
+                                <td>
+                                    <div class="section__swiper-pagination swiper-pagination"></div>
+                                </td>
+                            </tr>
                             <tr class="section__tbl-row">
                                 <td colspan="4" class="section__tbl-data">
-                                    <p class="section__tbl-txt">Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.</p>
+                                    <p class="section__tbl-txt">Все цены указаны с учетом НДС. Стоимость ремонта указана
+                                        на единичную услугу. Для получения коммерческого предложения на постоянное
+                                        обслуживание, оставьте заявку.</p>
                                     <button class="section__activity">
                                         Получить коммерческое предложение
                                         <svg class="section__activity-icon" role="img" aria-label="Перейти" width="8" height="12" viewBox="0 0 8 12" xmlns="http://www.w3.org/2000/svg">
@@ -493,10 +505,10 @@
                 </section>
             </main>
             <footer class="footer">
-                <div class="footer__wrap">
-                    <span class="footer__txt">© 2019 CPS</span>
-                    <span class="footer__txt">Разработано командой Apesong</span>
-                </div>
+                <p class="footer__txt">
+                    © 2019 CPS<br>
+                    Разработано командой Apesong
+                </p>
                 <a href="#" class="footer__link">Политика конфиденциальности</a>
                 <p class="footer__txt">Информация, размещенная на данной странице, не является публичной офертой</p>
             </footer>
